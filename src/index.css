@@ -1,21 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Anton&family=Outfit:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Anton", sans-serif;
-  --font-accent: "Outfit", sans-serif;
+  --font-display: "Outfit", sans-serif;
   
-  --color-brand-primary: #2563eb;
-  --color-brand-bg: #f8fafc;
+  --color-brand-primary: #003366;
+  --color-brand-secondary: #0066CC;
+  --color-brand-accent: #00A3FF;
+  --color-brand-light: #F8FAFC;
+  --color-brand-dark: #0F172A;
 }
 
 @layer base {
   body {
-    @apply bg-slate-50 text-slate-900 font-sans antialiased;
+    @apply bg-brand-light text-slate-900 font-sans antialiased;
   }
 }
 
-.product-card-mask {
-  border-radius: 24px;
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-brand-primary to-brand-accent;
+}
+
+.hero-blob {
+  @apply absolute rounded-full blur-3xl opacity-20 pointer-events-none;
+}
+
+.service-card {
+  @apply bg-white p-8 rounded-3xl border border-slate-100 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
 }
